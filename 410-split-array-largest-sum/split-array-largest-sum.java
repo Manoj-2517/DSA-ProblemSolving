@@ -1,25 +1,4 @@
 class Solution {
-    public int Maximum(int[] nums)
-    {
-        int maxi = nums[0];
-        for(int i=0;i<nums.length;i++)
-        {
-            if(nums[i]>maxi)
-            {
-                maxi=nums[i];
-            }
-        }
-        return maxi;
-    }
-    public int sumOfArr(int[] nums)
-    {
-        int sum=0;
-        for(int i=0;i<nums.length;i++)
-        {
-            sum+=nums[i];
-        }
-        return sum;
-    }
     public int painterPlacing(int[] nums,int area)
     {
         int painter=1,painterplacing=0;
@@ -38,7 +17,13 @@ class Solution {
     }
     public int largestSubArraySumMin(int[] nums,int n,int k)
     {
-        int low=Maximum(nums),high=sumOfArr(nums);
+        int low=nums[0];
+        int high=0;
+        for(int num:nums)
+        {
+            low = Math.max(low,num);
+            high+=num;
+        }
         if(k>n)
         {
             return -1;
