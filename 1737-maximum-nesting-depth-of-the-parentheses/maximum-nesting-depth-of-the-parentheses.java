@@ -11,10 +11,10 @@ class Solution {
             else if(s.charAt(i)==')')
             {
                 cnt--;
-                if(cnt<0)
-                {
-                    return -1;
-                }
+                // if(cnt<0)
+                // {
+                //     return -1;
+                // }
             }
         }
        return (cnt==0)?depth:-1;
